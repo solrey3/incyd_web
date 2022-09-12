@@ -1,34 +1,35 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import {RecoilRoot} from 'recoil';
-import Login from "./Login"
-import Register from "./Register"
-import Model from "./Model"
+import React from "react";
+import About from "./components/About";
+import Blog from "./components/Blog";
+import Login from "./components/Login";
+import Secret from "./components/Secret";
+import Header from "./components/Header";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import PrivateRoute from "./components/PrivateRoute";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <RecoilRoot>
-      <Router>
+    <>
+      <Header />
+      <main>
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/model">
-            <Model />
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route>
+          <PrivateRoute path="/blog">
+            <Route component={Blog} />
+          </PrivateRoute>
+          <Route path="/about" component={About} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <PrivateRoute path="/secret">
+            <Route component={Secret} />
+          </PrivateRoute>
+          <Route path="/" component={Home} />
+          <Redirect to="/" />
         </Switch>
-      </Router>
-    </RecoilRoot>
+      </main>
+    </>
   );
-}
+};
 
 export default App;
