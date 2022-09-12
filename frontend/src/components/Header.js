@@ -12,6 +12,9 @@ const Header = ({ history }) => {
   return (
     <header>
       <nav>
+        <NavLink to="/home" activeStyle={{ color: "#F2F2F2" }}>
+          INCYD
+        </NavLink>
         <NavLink to="/about" activeStyle={{ color: "#F2F2F2" }}>
           About
         </NavLink>
