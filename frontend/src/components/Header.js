@@ -12,17 +12,8 @@ const Header = ({ history }) => {
   return (
     <header>
       <nav>
-        <NavLink to="/home" activeStyle={{ color: "#F2F2F2" }}>
-          INCYD
-        </NavLink>
-        <NavLink to="/about" activeStyle={{ color: "#F2F2F2" }}>
-          About
-        </NavLink>
-        <NavLink to="/blog" activeStyle={{ color: "#F2F2F2" }}>
-          Blog
-        </NavLink>
         <NavLink to="/secret" activeStyle={{ color: "#F2F2F2" }}>
-          Secret
+          INCYD
         </NavLink>
         {!userLoggedIn && (
           <NavLink to="/login" activeStyle={{ color: "#F2F2F2" }}>

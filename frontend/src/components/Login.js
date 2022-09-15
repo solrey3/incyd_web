@@ -48,7 +48,7 @@ const LoginForm = () => {
     },
   });
 
-  if (userLoggedIn) history.push(location.state ? location.state.from.pathname : "/");
+  if (userLoggedIn) history.push(location.state ? location.state.from.pathname : "/secret");
   return (
     <div className="login-form-wrapper">
       <div className="col-10 col-sm-6 col-md-5 mx-auto">

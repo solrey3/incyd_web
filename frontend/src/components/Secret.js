@@ -6,7 +6,7 @@ const Secret = () => {
     <>
     <h2>Classified Info</h2>
     <div>
-        <a href={UniqueAddresses} download="download.csv"> Download Here </a>
+        <a href={UniqueAddresses} download="download.csv"> Click Here To Download </a>
     </div>
     </>
   );
